@@ -1,15 +1,15 @@
 version: "3"
 services:
-  streamlit:
+  root:
     restart: always
     build: 
       context: .
       dockerfile: Dockerfile
-    container_name: streamlit
-    working_dir: '/src'
+    container_name: root
+    working_dir: '/root'
     tty: true
     volumes: 
-      - ./src:/src
+      - ./root:/root
     ports: 
       - '8501:8501'
-    command: streamlit run app.py
+    # command: streamlit run app.py
